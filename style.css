@@ -1,34 +1,95 @@
 body {
-    font-family: sans-serif;
-    background-color: #fdf8f2;
-    color: #333;
+    font-family: 'Inter', sans-serif;
 }
 
-header { text-align: center; margin-bottom: 2em;}
-#menu-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5em;
-    padding: 1em;
+.font-pacifico {
+    font-family: 'Pacifico', cursive;
 }
 
-.product-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1em;
-    text-align: center;
-    background-color: #fff;
+/* Style for the scrollbar to make it more subtle */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
 }
 
-.product-card img { max-width: 100%; height: auto; border-radius: 4px; }
-.product-card button {
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1em;
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
 }
 
-.cart-section { text-align: center; margin-top: 2em; padding: 1em; }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #d1a18c;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #b88a73;
+}
+
+/* Enhanced image styling */
+.menu-card img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.menu-card:hover img {
+    filter: brightness(1.1);
+}
+
+/* Loading animation for images */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.image-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Enhanced card animations */
+.menu-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button enhancements */
+.add-to-cart-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.add-to-cart-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.add-to-cart-btn:hover::before {
+    left: 100%;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .menu-card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-card img {
+        height: 180px;
+    }
+}

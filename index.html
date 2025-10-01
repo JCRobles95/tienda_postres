@@ -1,32 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu de Postres</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Menú de Postres "Dulce Rincón"</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a nice cursive heading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+ 
 </head>
-<body>
-    <header>
-        <h1>Nuestros Deliciosos Postres</h1>
-    </header>
+<body class="bg-amber-50">
 
-    <main id="menu-container">
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8">
 
-    </main>
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="font-pacifico text-5xl text-amber-800">Dulce Rincón</h1>
+            <p class="text-amber-600 mt-2 text-lg">Elige tus postres favoritos y haz tu pedido.</p>
+        </header>
 
-    <secction class="cart-section">
-        <h2>🛒Tu Carrito</h2>
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-        <div id="cart-items">
+            <!-- Menu Section -->
+            <main class="lg:col-span-2">
+                <h2 class="text-3xl font-bold text-amber-900 mb-6">Nuestro Menú</h2>
+                <div id="menu-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Dessert cards will be inserted here by JavaScript -->
+                </div>
+            </main>
 
+            <!-- Order Summary Section -->
+            <aside class="lg:col-span-1">
+                <div id="order-summary" class="bg-white p-6 rounded-2xl shadow-lg sticky top-8">
+                    <h2 class="text-2xl font-bold text-gray-800 border-b pb-4 mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        Tu Orden
+                    </h2>
+                    <div id="cart-items" class="custom-scrollbar max-h-64 overflow-y-auto pr-2">
+                        <!-- Cart items will be inserted here -->
+                        <p id="empty-cart-message" class="text-gray-500 text-center py-4">Tu carrito está vacío.</p>
+                    </div>
+                    <div id="order-totals" class="border-t pt-4 mt-4 space-y-2 text-gray-700 font-medium hidden">
+                        <div class="flex justify-between">
+                            <span>Subtotal:</span>
+                            <span id="subtotal"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>IVA (16%):</span>
+                            <span id="tax"></span>
+                        </div>
+                        <div class="flex justify-between text-xl font-bold text-gray-900">
+                            <span>Total:</span>
+                            <span id="total"></span>
+                        </div>
+                    </div>
+                    <button id="place-order-btn" class="mt-6 w-full bg-amber-600 text-white font-bold py-3 rounded-lg hover:bg-amber-700 transition-colors duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>
+                        Realizar Pedido
+                    </button>
+                </div>
+            </aside>
         </div>
+    </div>
 
-        <button id="checkout-btn">Realizar Pedido por WhatsApp</button>
-
-    </secction>
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-8 rounded-2xl shadow-xl text-center max-w-sm mx-4">
+            <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
+                <svg class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800">¡Pedido Realizado!</h3>
+            <p class="text-gray-600 mt-2 mb-6">Gracias por tu compra. Tu pedido ha sido recibido y se está preparando.</p>
+            <button id="close-modal-btn" class="w-full bg-amber-600 text-white font-bold py-2 rounded-lg hover:bg-amber-700 transition-colors duration-300">
+                Aceptar
+            </button>
+        </div>
+    </div>
 
     <script src="app.js"></script>
-
 </body>
 </html>
