@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,11 @@
     <!-- Google Fonts for a nice cursive heading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
- 
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body class="bg-amber-50">
 
     <!-- Main Container -->
@@ -38,7 +41,11 @@
             <aside class="lg:col-span-1">
                 <div id="order-summary" class="bg-white p-6 rounded-2xl shadow-lg sticky top-8">
                     <h2 class="text-2xl font-bold text-gray-800 border-b pb-4 mb-4 flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-amber-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
                         Tu Orden
                     </h2>
                     <div id="cart-items" class="custom-scrollbar max-h-64 overflow-y-auto pr-2">
@@ -59,7 +66,9 @@
                             <span id="total"></span>
                         </div>
                     </div>
-                    <button id="place-order-btn" class="mt-6 w-full bg-amber-600 text-white font-bold py-3 rounded-lg hover:bg-amber-700 transition-colors duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>
+                    <button id="place-order-btn"
+                        class="mt-6 w-full bg-amber-600 text-white font-bold py-3 rounded-lg hover:bg-amber-700 transition-colors duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                        disabled>
                         Realizar Pedido
                     </button>
                 </div>
@@ -68,7 +77,8 @@
     </div>
 
     <!-- Confirmation Modal -->
-    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div id="confirmation-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
         <div class="bg-white p-8 rounded-2xl shadow-xl text-center max-w-sm mx-4">
             <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
                 <svg class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -76,8 +86,10 @@
                 </svg>
             </div>
             <h3 class="text-2xl font-bold text-gray-800">¡Pedido Realizado!</h3>
-            <p class="text-gray-600 mt-2 mb-6">Gracias por tu compra. Tu pedido ha sido recibido y se está preparando.</p>
-            <button id="close-modal-btn" class="w-full bg-amber-600 text-white font-bold py-2 rounded-lg hover:bg-amber-700 transition-colors duration-300">
+            <p class="text-gray-600 mt-2 mb-6">Gracias por tu compra. Tu pedido ha sido recibido y se está preparando.
+            </p>
+            <button id="close-modal-btn"
+                class="w-full bg-amber-600 text-white font-bold py-2 rounded-lg hover:bg-amber-700 transition-colors duration-300">
                 Aceptar
             </button>
         </div>
@@ -85,4 +97,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
